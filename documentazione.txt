@@ -1,0 +1,28 @@
+﻿Titolo: Relazioni tra Collections
+Collections principali:
+1. VoloOperativo – rappresenta i voli attivi e schedulati.
+
+2. VoloProgrammato – rappresenta la pianificazione dei voli (riferimento da VoloOperativo).
+
+3. Gate – informazioni sui gate aeroportuali.
+
+4. Aeromobile – informazioni sugli aerei.
+
+5. Personale – personale a bordo dei voli.
+
+Scelte di relazione tra collections:
+   * VoloOperativo → VoloProgrammato
+ Tipo: referenziata
+Motivo: i voli operativi sono collegati a un volo programmato; il riferimento consente aggiornamenti indipendenti.
+
+   * VoloOperativo → Gate
+ Tipo: referenziata
+Motivo: il gate assegnato può cambiare senza modificare il volo operativo.
+
+   * VoloOperativo → Aeromobile
+ Tipo: referenziata
+Motivo: lo stesso aeromobile può servire più voli.
+
+   * VoloOperativo → Personale
+ Tipo: embedded
+Motivo: per comodità, i dati del personale a bordo sono inclusi direttamente nel documento del volo operativo.
